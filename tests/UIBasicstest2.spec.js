@@ -1,4 +1,4 @@
-const { test, expect } = require('@playwright/test');
+import { test } from '@playwright/test';
 
 test.only('Positive Login Test - UI Basics Test 2', async ({ browser}) =>
     {
@@ -19,12 +19,15 @@ for(const producttitle of allproductstitle) {
     console.log(producttitle);
     if(producttitle.includes('Nokia Edge')){
         // Click the "Add to Cart" button for the matching product
-        await page.locator(".card-title a", { hasText: 'Nokia Edge' }).locator('xpath=ancestor::div[contains(@class,"card")]').locator(".card-footer button").click();
+        const productCard = page.locator('.card').filter({ has: page.locator('.card-title a', { hasText: 'Nokia Edge' }) });
+        await productCard.locator('.card-footer button').click();
     }
 }
+page.pause();
 await page.locator("a.btn-primary").click();
-
-        
+const prod= page.locator(".media-heading a");
+console.log(await prod.allTextContents());  
+await page.waitForTimeout(2000); // Waits for 2 seconds   
 
 
 

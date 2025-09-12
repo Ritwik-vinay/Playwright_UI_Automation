@@ -18,8 +18,9 @@ export default defineConfig({
   timeout: 50 * 1000, // Global test timeout
   reporter: 'html',
   use: {
-    browserName: 'chromium',
-    headless: false, // The browser will open in headed mode (UI visible)
+    browserName: "chromium", // Playwright uses 'chromium' for Chrome
+    channel: "chrome",       // This runs tests in the actual Chrome browser
+    headless: false,         // The browser will open in headed mode (UI visible)
     expect: {
       timeout: 30 * 1000 // Assertion timeout
     }
