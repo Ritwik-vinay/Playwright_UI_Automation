@@ -20,7 +20,9 @@ export default defineConfig({
   use: {
     browserName: "chromium", // Playwright uses 'chromium' for Chrome
     channel: "chrome",       // This runs tests in the actual Chrome browser
-    headless: false,         // The browser will open in headed mode (UI visible)
+    headless: false, 
+    screenshot:'on',
+    trace:'on',
     expect: {
       timeout: 30 * 1000 // Assertion timeout
     }

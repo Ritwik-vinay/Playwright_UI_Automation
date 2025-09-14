@@ -25,8 +25,8 @@ for(const producttitle of allproductstitle) {
 }
 page.pause();
 await page.locator("a.btn-primary").click();
-const prod= page.locator(".media-heading a").inputValue;
-console.log(await prod.allTextContents());  
+const prod = page.locator(".media-heading a");
+console.log(await prod.allTextContents());
 await page.waitForTimeout(2000); // Waits for 2 seconds   
 await page.locator("[class='btn btn-success']").click();
 
