@@ -1,3 +1,4 @@
+const {request}= require('playwright');
 const { test, expect } = require('@playwright/test');
 
 test('UI End to End Ecomm test', async ({ browser }) => {
@@ -6,7 +7,7 @@ test('UI End to End Ecomm test', async ({ browser }) => {
     const page = await context.newPage();
     await page.goto("https://rahulshettyacademy.com/client/");
     //Product mentioned below to select 
-    const productName = "ADIDAS ORIGINAL";
+    const productName ="ADIDAS ORIGINAL";
     //Locators 
     const email_Id = page.locator("#userEmail");
     const password = page.locator("#userPassword");
