@@ -1,3 +1,4 @@
+const { request } = require('playwright');
 import { test, expect } from '@playwright/test';
 
 test("UI new Tab actions", async ({ browser }) => {

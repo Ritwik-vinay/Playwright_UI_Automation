@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -17,6 +18,7 @@ export default defineConfig({
   testDir: './tests',
   timeout: 50 * 1000, // Global test timeout
   reporter: 'html',
+    workers: 4,
   use: {
     browserName: "chromium", // Playwright uses 'chromium' for Chrome
     channel: "chrome",       // This runs tests in the actual Chrome browser

@@ -33,3 +33,16 @@ test('Handle Alert element', async ({ browser }) => {
 
 })
 
+test('Hover action to be performed', async({browser})=>
+{
+    const context= await browser.newContext();
+    const page = await context.newPage();
+    page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+    const hoverbtn= page.locator("[id='mousehover']");
+    const reloadbtn= page.getByText("Reload");
+    await hoverbtn.hover();
+    await reloadbtn.isVisible();
+    await reloadbtn.click();
+
+})
+

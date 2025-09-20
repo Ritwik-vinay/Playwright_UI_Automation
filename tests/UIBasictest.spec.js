@@ -1,3 +1,4 @@
+const { request } = require('playwright');
 const {test, expect} =require('@playwright/test');
 
 test('First Playwright Test', async ({browser})=>
