@@ -7,6 +7,11 @@ test('Test the tables ',async({browser})=>//fat Operator
     const page= await context.newPage();
     page.goto("https://rahulshettyacademy.com/AutomationPractice");
     await page.fill('#name',"Ritwik Vinay");
+    //Fixed table -> Header Printing
+    const text_headers= await page.locator(".tableFixHead th").allTextContents();
+    console.log(text_headers)
+
+    
 
 })
 
