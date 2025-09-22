@@ -18,6 +18,7 @@ export default defineConfig({
   testDir: './tests',
   timeout: 50 * 1000, // Global test timeout
   reporter: 'html',
+  fullyParallel: true,
     workers: 4,
   use: {
     browserName: "chromium", // Playwright uses 'chromium' for Chrome
