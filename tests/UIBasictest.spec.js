@@ -24,5 +24,6 @@ test('Browser context Playwright test', async ({browser})=>
     await page.locator("[name='password']").fill("abc123");
     await page.locator("#signInBtn").click();
     console.log(await page.locator("[style*='block']").textContent());
+   // let const
     
 });
