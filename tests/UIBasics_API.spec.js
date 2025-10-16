@@ -10,7 +10,7 @@ test.beforeAll(async()=>{
     expect(loginResponse.ok()).toBeTruthy();
     const loginResponseToken = await loginResponse.json();
      token= loginResponseToken.token;
-    console.log(token)
+    console.log(token);
 
 
 })
@@ -97,14 +97,12 @@ test('UI implementation with API Stability' ,async({page})=>{
 
         }
     }
-
     //Enter the coupon and get text
     //Locators on the Place Order Page
     const coupon_code = page.locator("[name ='coupon']");
     const coupon_appliedBtn = page.locator("button:has-text('Apply Coupon')");
     const coupon_appliedMsg = page.locator(".mt-1.ng-star-inserted");
     const placeOrder_btn= page.locator("text='Place Order'");
-
    // Actions Performed on the Place Order Page
     await coupon_code.fill("rahulshettyacademy");
     await coupon_appliedBtn.click();
@@ -112,7 +110,6 @@ test('UI implementation with API Stability' ,async({page})=>{
     console.log(await coupon_appliedMsg.textContent());
     await placeOrder_btn.click();
     //End of the Place order page
-
     //Confirmed Order Page 
     const orderPlacedSuccessfully= page.locator(".hero-primary");
     const order_btn= page.locator("button[routerlink*='dashboard/myorders']");
@@ -122,9 +119,6 @@ test('UI implementation with API Stability' ,async({page})=>{
     const orderIdText= await orderId.textContent();
     console.log(orderIdText.trim())
     await order_btn.click();
-
-
-
     //OrderPage 
     await page.locator("tbody").waitFor();
     const orderRows= page.locator("tbody tr");
@@ -139,6 +133,5 @@ test('UI implementation with API Stability' ,async({page})=>{
     }
     const order_id= await page.locator(".col-text").textContent();
     expect(orderIdText.includes(order_id)).toBeTruthy();
-
 });
 
