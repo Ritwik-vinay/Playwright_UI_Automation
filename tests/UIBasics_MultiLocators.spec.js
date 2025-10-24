@@ -18,12 +18,4 @@ test('UI All Locator End to End Practice', async ({ browser }) => {
     const allButtons = await page.locator("a, button").allTextContents();
     console.log(allButtons);
     await page.getByText(/Checkout/).click()
-  
-
-
-
-
-
-
-
 });
